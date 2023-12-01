@@ -5,8 +5,8 @@ import ListItemText from "@mui/material/ListItemText";
 import { Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom"; // Correct import for Link
 
-export default function SideMenuNav(){
-  return(
+export default function SideMenuNav() {
+  return (
     <aside>
       <Drawer variant="permanent" anchor="left">
         <List>
@@ -27,6 +27,6 @@ export default function SideMenuNav(){
           </ListItem>
         </List>
       </Drawer>
-  </aside>
+    </aside>
   );
 }

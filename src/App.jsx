@@ -55,36 +55,28 @@ class Global extends React.Component {
 // Create a shorthand Hook for using the GlobalState
 const useGlobalState = () => React.useContext(GlobalState);
 
-
-function SideBarMenu(){
-  const sidebarStyle = {
-    width: '10%', // Set the width of your sidebar
-    flexShrink: 0, // Prevents the sidebar from shrinking
-  };
-
-  
-
-  return(
+function SideBarMenu() {
+  return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <aside style={{width:"10%", flexShrink:"0"}}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <aside style={{ width: "10%", flexShrink: "0" }}>
           <SideMenuNav />
         </aside>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/todo" element={<ToDoPage />} />
-            <Route path="/about" element={<AboutPage />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/todo" element={<ToDoPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </div>
     </Router>
-  )
+  );
 }
 
 export default function App() {
   // Note: within the Root function we can return any Component (not just SomeComponent, but also a Router for instance)
-  return( <Global Root={SideBarMenu }></Global>);
+  return <Global Root={SideBarMenu}></Global>;
 }
 
-export { useGlobalState};
+export { useGlobalState };
 // Expose the GlobalState object to the window (allowing GlobalState.set({ count: 'new' }) from anywhere in the code (even your console))
 window.GlobalState = GlobalState;
